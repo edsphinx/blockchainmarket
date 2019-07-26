@@ -10,6 +10,9 @@ contract BlockchainMarketBase is AccessControl {
     //All the items
     Item[] public items;
 
+    //All the userss ids
+    uint256[] public UsersIds;
+
     //Mapping of Owner Address to list of owned items
     mapping(address => uint256[]) userItemList;
 

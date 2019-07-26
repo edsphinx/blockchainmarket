@@ -50,6 +50,14 @@ contract BlockchainMarket is UserFactory {
         return addressUserId[_userAddr];
     }
 
+    function getUserIds()
+        external
+        view
+        returns (uint[])
+    {
+        return UsersIds;
+    }
+
     function getUser(uint256 _userId)
         external
         view

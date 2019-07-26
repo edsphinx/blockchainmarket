@@ -17,6 +17,8 @@ contract UserFactory is BlockchainMarketBase {
         uint256 userId = users.length;
         address newUser = msg.sender;
 
+        UsersIds.push(userId);
+        
         users.push(User(userId, newUser, _userName));
 
         userRegistered[userId] = newUser;
