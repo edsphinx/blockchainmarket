@@ -6,20 +6,6 @@ import { Card, Button, Form, Box, Flex, Input, Heading, Text } from 'rimble-ui';
 const { ContractData, ContractForm } = newContextComponents;
 
 class SignUp extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { validated: false };
-    // }
-
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.setState({ validated: true });
-    // }
-
-    // handleValidation(e) {
-    //     e.target.parentNode.classList.add("was-validated");
-    // }
-
     render() {
         return (
             <DrizzleContext.Consumer>
@@ -78,14 +64,9 @@ class SignUp extends React.Component {
                                                         drizzleState={drizzleState}
                                                         contract='BlockchainMarket'
                                                         method='getAllUser'
+                                                        toUtf8
                                                         render={displayData => (
-                                                            <ol>
-                                                                {displayData !== undefined && displayData !== null ? displayData.map(v => (
-                                                                    <li key={v}>
-                                                                        value: {v}
-                                                                    </li>
-                                                                )): 'No Users'}
-                                                            </ol>
+                                                            {displayData}
                                                         )}
                                                     />
                                                 </Box>
