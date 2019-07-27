@@ -5,6 +5,8 @@ import "contracts/UserFactory.sol";
 
 contract Store is UserFactory, ItemFactory {
 
+    event NewContractAdded(address contractAddr);
+
     function setBlockchainMarketBaseContractAddress(address _address) 
         external 
         isAdmin
@@ -14,6 +16,8 @@ contract Store is UserFactory, ItemFactory {
         require(candidateContract.isBlockchainMarket());
 
         blockchainMarket = candidateContract;
+
+        emit NewContractAdded(_address);
     }
 
 }

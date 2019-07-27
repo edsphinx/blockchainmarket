@@ -1,13 +1,18 @@
 import BlockchainMarket from './contracts/BlockchainMarket.json';
+import Store from './contracts/Store.json';
 
 const drizzleOptions = {
     contracts: [
-        BlockchainMarket
+        BlockchainMarket,
+        Store
     ],
     events: {
         BlockchainMarket: [
-            'LogUserSignUp',
-            'LogAdminApproved'
+            'NewUserSignUp',
+            'ItemAdded'
+        ],
+        Store: [
+            'NewContractAdded'
         ]
     },
     web3: {
