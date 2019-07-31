@@ -7,28 +7,28 @@ contract UserFactory is BlockchainMarketBase {
 
     BlockchainMarketInterface internal blockchainMarket;
 
-    event NewUserSignUp(uint256 userId, address indexed userAddr, string userName);
+    // event NewUserSignUp(uint256 userId, address indexed userAddr, string userName);
 
-    function signUp(string calldata _userName)
-        external
-        notPaused
-        returns (uint256)
-    {
-        uint256 userId = users.length;
-        address newUser = msg.sender;
+    // f   external
+    //     notPaused
+    //     returns (uint256)
+    // {
+    //     uint256 userId = users.length;
+    //     address newUser = msg.sender;
 
-        UsersIds.push(userId);
-        
-        users.push(User(userId, newUser, _userName));
+    //     Useunction signUp(string calldata _userName)
+    //  rsIds.push(userId);
 
-        userRegistered[userId] = newUser;
+    //     users.push(User(userId, newUser, _userName));
 
-        addressUserId[newUser] = userId;
+    //     userRegistered[userId] = newUser;
 
-        addRole(newUser, ROLE_STORE_OWNER);
+    //     addressUserId[newUser] = userId;
 
-        emit NewUserSignUp(userId, newUser, _userName);
+    //     addRole(newUser, ROLE_STORE_OWNER);
 
-        return userId;
-    }
+    //     emit NewUserSignUp(userId, newUser, _userName);
+
+    //     return userId;
+    // }
 }

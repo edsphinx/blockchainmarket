@@ -2,25 +2,6 @@
   "contractName": "BlockchainMarketInterface",
   "abi": [
     {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_userName",
-          "type": "string"
-        }
-      ],
-      "name": "signUp",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "constant": true,
       "inputs": [],
       "name": "isBlockchainMarket",
@@ -35,25 +16,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"isBlockchainMarket\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_userName\",\"type\":\"string\"}],\"name\":\"signUp\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol\":\"BlockchainMarketInterface\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol\":{\"keccak256\":\"0x5674ede178efbb0df6e3343e7895f8ea3b63582d38aa7cedb8d2e5984c2cb5a5\",\"urls\":[\"bzzr://3299243c23aedfc3798cbf0c6c2d995f5340b13de28fb9372bfdc0d72b512fca\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"isBlockchainMarket\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol\":\"BlockchainMarketInterface\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol\":{\"keccak256\":\"0x824bd74926cae026396e806d5aceb8032c296adcab1299fd068fa2cbb99ba8ba\",\"urls\":[\"bzzr://062f3fca5e280510606e259d56ad1ba8d44f937707fc7c682c23da346427a8ab\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\n\ninterface BlockchainMarketInterface {\n\n    function signUp(string calldata _userName) external returns (uint256);\n\n    function isBlockchainMarket() external pure returns (bool);\n}",
+  "source": "pragma solidity ^0.5.0;\n\ninterface BlockchainMarketInterface {\n\n    function isBlockchainMarket() external pure returns (bool);\n}",
   "sourcePath": "/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol",
   "ast": {
     "absolutePath": "/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol",
     "exportedSymbols": {
       "BlockchainMarketInterface": [
-        253
+        767
       ]
     },
-    "id": 254,
+    "id": 768,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 240,
+        "id": 761,
         "literals": [
           "solidity",
           "^",
@@ -69,9 +50,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 253,
+        "id": 767,
         "linearizedBaseContracts": [
-          253
+          767
         ],
         "name": "BlockchainMarketInterface",
         "nodeType": "ContractDefinition",
@@ -79,110 +60,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 247,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "signUp",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 243,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 242,
-                  "name": "_userName",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 247,
-                  "src": "84:25:3",
-                  "stateVariable": false,
-                  "storageLocation": "calldata",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_calldata_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 241,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "84:6:3",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "83:27:3"
-            },
-            "returnParameters": {
-              "id": 246,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 245,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 247,
-                  "src": "129:7:3",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 244,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "129:7:3",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "128:9:3"
-            },
-            "scope": 253,
-            "src": "68:70:3",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "external"
-          },
-          {
-            "body": null,
-            "documentation": null,
-            "id": 252,
+            "id": 766,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isBlockchainMarket",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 248,
+              "id": 762,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "171:2:3"
+              "src": "95:2:3"
             },
             "returnParameters": {
-              "id": 251,
+              "id": 765,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 250,
+                  "id": 764,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 252,
-                  "src": "197:4:3",
+                  "scope": 766,
+                  "src": "121:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -190,10 +90,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 249,
+                    "id": 763,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "197:4:3",
+                    "src": "121:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -203,33 +103,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "196:6:3"
+              "src": "120:6:3"
             },
-            "scope": 253,
-            "src": "144:59:3",
+            "scope": 767,
+            "src": "68:59:3",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 254,
-        "src": "25:180:3"
+        "scope": 768,
+        "src": "25:104:3"
       }
     ],
-    "src": "0:205:3"
+    "src": "0:129:3"
   },
   "legacyAST": {
     "absolutePath": "/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol",
     "exportedSymbols": {
       "BlockchainMarketInterface": [
-        253
+        767
       ]
     },
-    "id": 254,
+    "id": 768,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 240,
+        "id": 761,
         "literals": [
           "solidity",
           "^",
@@ -245,9 +145,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 253,
+        "id": 767,
         "linearizedBaseContracts": [
-          253
+          767
         ],
         "name": "BlockchainMarketInterface",
         "nodeType": "ContractDefinition",
@@ -255,110 +155,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 247,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "signUp",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 243,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 242,
-                  "name": "_userName",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 247,
-                  "src": "84:25:3",
-                  "stateVariable": false,
-                  "storageLocation": "calldata",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_calldata_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 241,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "84:6:3",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "83:27:3"
-            },
-            "returnParameters": {
-              "id": 246,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 245,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 247,
-                  "src": "129:7:3",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 244,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "129:7:3",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "128:9:3"
-            },
-            "scope": 253,
-            "src": "68:70:3",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "external"
-          },
-          {
-            "body": null,
-            "documentation": null,
-            "id": 252,
+            "id": 766,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isBlockchainMarket",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 248,
+              "id": 762,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "171:2:3"
+              "src": "95:2:3"
             },
             "returnParameters": {
-              "id": 251,
+              "id": 765,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 250,
+                  "id": 764,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 252,
-                  "src": "197:4:3",
+                  "scope": 766,
+                  "src": "121:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -366,10 +185,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 249,
+                    "id": 763,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "197:4:3",
+                    "src": "121:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -379,20 +198,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "196:6:3"
+              "src": "120:6:3"
             },
-            "scope": 253,
-            "src": "144:59:3",
+            "scope": 767,
+            "src": "68:59:3",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 254,
-        "src": "25:180:3"
+        "scope": 768,
+        "src": "25:104:3"
       }
     ],
-    "src": "0:205:3"
+    "src": "0:129:3"
   },
   "compiler": {
     "name": "solc",
@@ -400,7 +219,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-26T06:03:09.272Z",
+  "updatedAt": "2019-07-31T07:58:18.106Z",
   "devdoc": {
     "methods": {}
   },

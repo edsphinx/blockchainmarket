@@ -1,29 +1,33 @@
 pragma solidity ^0.5.0;
 
-import "contracts/BlockchainMarketBase.sol";
+import "contracts/StoreFactory.sol";
 
-contract ItemFactory is BlockchainMarketBase {
+contract ItemFactory is StoreFactory {
 
-    event ItemAdded(uint256 itemId, uint256 indexed userId, string _name, uint256 price);
+    event NewItem(uint256 itemId, uint256 indexed userId, string _itemName, uint256 price);
 
-    function addItem(uint256 _userId, string memory _itemName, uint256 _itemPrice)
-        public
-        payable
+    function newItem(string memory _itemName, uint _itemPrice, uint _itemSKU, uint _storeId, string memory _imageHash) 
+        public 
         notPaused
-        returns (uint256)
+        validNameLength(_itemName, 35)
+        isStoreOwner(msg.sender, _storeId)
+        returns (uint)
     {
-        uint256 itemId = items.length;
+        skuTotal = SafeMath.add(skuTotal, 1);
+        // increase  items total
+        uint total = stores[_storeId].skuTotal;
 
-        address _user = msg.sender;
+        stores[_storeId].items[total].name = _itemName;
+        stores[_storeId].items[total].price = _itemPrice;
+        stores[_storeId].items[total].sku = _itemSKU;
+        stores[_storeId].items[total].image = _imageHash;
 
-        items.push(Item(itemId, _userId, _itemPrice, _itemName));
+        // increase items total in Stores
+        stores[_storeId].skuTotal = SafeMath.add(total, 1); 
 
-        userItemList[_user].push(itemId);
+        emit NewItem(_itemSKU, _storeId, _itemName, _itemPrice );
 
-        userItems[_userId].push(itemId);
-
-        emit ItemAdded(itemId, _userId, _itemName, _itemPrice);
-
-        return itemId;
+        return skuTotal;
     }
 }
+

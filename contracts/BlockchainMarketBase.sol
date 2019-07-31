@@ -4,37 +4,51 @@ import "contracts/AccessControl.sol";
 
 contract BlockchainMarketBase is AccessControl {
 
-    //All the users registered
-    User[] public users;
+    uint skuTotal = 0;
 
-    //All the items
-    Item[] public items;
+    uint storeTotal = 0;
 
-    //All the userss ids
-    uint256[] public UsersIds;
+    //Mapping of Store Ids with Stores Struct
+    mapping(uint => Store) public stores;
 
-    //Mapping of Owner Address to list of owned items
-    mapping(address => uint256[]) userItemList;
+    //Mapping of address of users
+    mapping(address => User) public users;
 
-    //Mapping of User Address to UserId
-    mapping(address => uint256) addressUserId;
- 
-    //Mapping of UserId to UserAddress
-    mapping(uint256 => address) public userRegistered;
+    //Make sure names aren't too big
+    modifier validNameLength(string memory _storeName, uint stringLimit) { require(bytes(_storeName).length <= stringLimit, "Max characters are 35 for name of store"); _; }
 
-    //Mapping of UserId to Item list
-    mapping(uint256 => uint256[]) public userItems;
+    // Checks if store exists or not
+    modifier validStoreExistence(uint _storeID) {require(_storeID <= storeTotal, "Invalid StoreID provided"); _; }
 
-    struct User {
-        uint256 userId;
-        address userAddr;
-        string userName;
+    //Check the Owner of the Store
+    modifier isStoreOwner(address _storeOwner, uint _storeId) { require(_storeOwner == stores[_storeId].owner); _; }
+
+    /*
+    * Structures Defition
+    */ 
+    struct User{
+        string name;
+        mapping(uint => mapping(uint => uint)) orders;
+    }
+
+    struct Store {
+        address payable owner;
+        string name;
+        uint skuTotal;
+        uint balance;
+        mapping (uint=>Item) items;
     }
 
     struct Item {
-        uint256 itemId;
-        uint256 userId;
-        uint256 price;
+        uint sku;
         string name;
+        uint price;
+        string image;
     }
+
+    struct Order {
+        uint quantity;
+        uint price;
+    }
+
 }
