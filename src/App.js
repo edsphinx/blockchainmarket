@@ -23,7 +23,8 @@ class App extends Component {
         const web3 = await web3Provider();
         const networkId = await web3.eth.net.getId();
         const network = BlockchainMarketContract.networks[networkId];
-        const contract = new web3.eth.Contract(BlockchainMarketContract.abi, network && network.address);
+        const contractAddress = "0xe7693bABcD79CF95e9d2C9fD0FAC777A7a8C8DFB";
+        const contract = new web3.eth.Contract(BlockchainMarketContract.abi, contractAddress);
         let accounts = await web3.eth.getAccounts();
         web3.currentProvider.publicConfigStore.on('update', async () => {
             accounts = await web3.eth.getAccounts();
