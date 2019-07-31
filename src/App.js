@@ -7,6 +7,7 @@ import Home from './components/Home';
 import StoreDetails from './components/StoreDetails';
 import Orders from './components/Orders';
 import Balance from './components/Balance';
+import ENS from 'ethereum-ens';
 
 class App extends Component {
 
@@ -23,8 +24,19 @@ class App extends Component {
         const web3 = await web3Provider();
         const networkId = await web3.eth.net.getId();
         const network = BlockchainMarketContract.networks[networkId];
-        const contractAddress = "0xe7693bABcD79CF95e9d2C9fD0FAC777A7a8C8DFB";
+
+        //ENS Implementation
+        const ens = new ENS(web3);
+        const ensAddress = 'finalproject.eth';
+        //const contractAddress = ens.resolver(ensAddress).addr()
+        //This to Deploy Ropsten Version And Comment Deploy Local Development Bellow
+        const contractAddress = "0x3620aC3b36A73D3AF16886C12D561132CED1F3Eb";
         const contract = new web3.eth.Contract(BlockchainMarketContract.abi, contractAddress);
+
+        //This to Deploy Local Development and Comment Deploy Ropsten Version 
+        //const contract = new web3.eth.Contract(BlockchainMarketContract.abi, network && network.address);
+
+
         let accounts = await web3.eth.getAccounts();
         web3.currentProvider.publicConfigStore.on('update', async () => {
             accounts = await web3.eth.getAccounts();

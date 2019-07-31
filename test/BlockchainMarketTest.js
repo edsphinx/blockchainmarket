@@ -299,6 +299,7 @@ contract("BlockchainMarket", async accounts => {
         });
     });
 
+    //Fourth Section is about business operation like checking orders placed
     describe("Verification of Orders", () => {
         
         it("8. Check Orders Placed", async () => {

@@ -6,13 +6,6 @@ import "contracts/ItemFactory.sol";
 contract BlockchainMarket is ItemFactory {
 
     using SafeMath for uint;
-
-    event ForSale(uint _sku, uint _storeId, string _name, uint _quantity);
-    event Sold(uint _sku, uint _storeId, uint _quantity);
-    event StoreRemoved(address _user);
-    event ItemDeleted(uint _storeId, uint _sku);
-    event Message(uint);
-    event WithdrawnBalanceStore(uint _storeId, uint _total);
     
     modifier checkQuantity(uint _quantity, uint _storeId, uint _itemCode) {require(_quantity <= stores[_storeId].items[_itemCode].sku, "Not sufficient quantity available"); _; }
   
@@ -21,18 +14,18 @@ contract BlockchainMarket is ItemFactory {
     }
   
     function getOrder(uint _storeId, uint _itemSku)
-        view
         public
         returns(uint quantity, uint price)
     {
         quantity = users[msg.sender].orders[_storeId][_itemSku];
         price = stores[_storeId].items[_itemSku].price;
 
+        emit GetOrder(_storeId, _itemSku, quantity, price);
+        
         return(quantity, price);
     }
 
     function getItem(uint _sku, uint _storeId)
-        view
         public 
         notPaused
         returns (string memory name, uint sku, uint price, string memory image) 
@@ -44,22 +37,26 @@ contract BlockchainMarket is ItemFactory {
         price = item.price;
         image = item.image;
 
+        emit GetItem(_storeId, _sku, name, price, image);
+
         return (name, sku, price, image);
     }
 
     function getStoreTotalItems(uint _storeId)
-        view
         public
         returns(uint)
     {
+        emit GetStoreTotalItem(_storeId, stores[_storeId].skuTotal);
+
         return stores[_storeId].skuTotal;
     }
   
     function getStoreTotal()
-        view
         public
         returns(uint)
     {
+        emit GetStoreTotal(storeTotal);
+
         return storeTotal;
     }
 
@@ -78,7 +75,7 @@ contract BlockchainMarket is ItemFactory {
 
         users[msg.sender].orders[_storeId][_sku] = SafeMath.add(users[msg.sender].orders[_storeId][_sku], _quantity);
 
-        emit Sold(_sku, _storeId, _quantity);
+        emit PurchaseItem(_storeId, _sku, _quantity);
 
     }
 
@@ -88,25 +85,29 @@ contract BlockchainMarket is ItemFactory {
         notPaused
     {
         delete stores[_storeId].items[_sku];
-        emit ItemDeleted(_storeId, _sku);
+
+        emit DeleteItem(_storeId, _sku);
     }
   
     function getStore(uint _storeId)
-        view
         public
         validStoreExistence(_storeId)
         returns(string memory, address, uint)
     {
         Store memory store = stores[_storeId];
+
+        emit GetStore(_storeId, store.name, store.owner, store.skuTotal);
+
         return (store.name, store.owner, store.skuTotal);
     }
   
     function getBalance(uint _storeId)
-        view
         public
         notPaused
         returns(uint)
     {
+        emit GetBalance(_storeId, stores[_storeId].balance);
+
         return stores[_storeId].balance;
     }
 
@@ -117,11 +118,11 @@ contract BlockchainMarket is ItemFactory {
         isStoreOwner(msg.sender, _storeId)
     {
         require(_total <= stores[_storeId].balance);
-
-        stores[_storeId].owner.transfer(_total);
+        
         stores[_storeId].balance = SafeMath.sub(stores[_storeId].balance, _total);
-
-        emit WithdrawnBalanceStore(_storeId, _total);
+        stores[_storeId].owner.transfer(_total);
+        
+        emit WithdrawBalance(_storeId, _total);
     }
   
     function withdrawAll() 
@@ -130,5 +131,7 @@ contract BlockchainMarket is ItemFactory {
         isPaused
     {
         owner.transfer(address(this).balance);
+
+        emit WithdrawAll(msg.sender, address(this).balance);
     }
 }
