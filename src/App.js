@@ -6,8 +6,6 @@ import BlockchainMarketContractDeployed from "./contracts/BlockchainMarket_Ropst
 import web3Provider from "./web3";
 import Home from './components/Home';
 import StoreDetails from './components/StoreDetails';
-import Orders from './components/Orders';
-import Balance from './components/Balance';
 import ENS from 'ethereum-ens';
 
 class App extends Component {
