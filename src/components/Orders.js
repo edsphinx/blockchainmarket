@@ -34,7 +34,7 @@ class Orders extends Component {
     render() {
         return (
             <div>
-                Orders
+                I Got Headache!!!
             </div>
         );
     }

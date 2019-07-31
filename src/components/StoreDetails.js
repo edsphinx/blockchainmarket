@@ -9,7 +9,7 @@ class StoreDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            owner: false,
+            owner: '',
             name: '',
             balance: 0,
             totalItems: 0,
@@ -77,6 +77,8 @@ class StoreDetails extends Component {
                 this.setState({ balance });
             })
     }
+
+    
 
     newItem = async () => {
         this.setState({ loading: true, visible: false });
@@ -160,6 +162,23 @@ class StoreDetails extends Component {
         
     }
 
+    withdrawBalance = () => {
+        console.log(this.state.balance);
+        if(this.state.balance > 0) {
+            this.props.contract.methods
+            .withdrawBalance(this.props.storeId, this.state.balance)
+            .send({ from: this.props.accounts[0] })
+            .catch(e => {
+                console.error(e);
+            })
+            .finally(() => {
+                console.log("Withdraw Successful!!!");
+                this.getBalance(this.props.storeId);
+            })
+        }
+        
+    }
+
     handleNameChange = e => {
         this.setState({ newItem: e.target.value });
     }
@@ -209,6 +228,36 @@ class StoreDetails extends Component {
         this.newItem();
     }
 
+    renderItem = item => {
+        if(item.sku > 0){
+            return (
+                <Card className='ui raised card' key={item.id}>
+                    <Image className="image" src={`https://ipfs.io/ipfs/${item.image}`} wrapped ui={false} />
+                    <Card.Content className='content'>
+                        <Card.Header>{`Product: ${item.name}`}</Card.Header>
+                        <Card.Meta>{item.sku > 0 ? "Available Item" : "Unavailable Item"}</Card.Meta>
+                        <Card.Description>
+                            {`SKU: ${item.sku}`}
+                        </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                        <Icon name='ethereum' />
+                        {`Price: ${item.price} ETH`}
+                        <Button className='ui primary button right floated'
+                                loading={this.state.buying}
+                                disabled={item.sku == 0}
+                                onClick={() => this.purchaseItem(item.id, item.price, this.props.storeId)}
+
+                        >
+                            <Icon name='shop' />
+                            Buy Now
+                        </Button>
+                    </Card.Content>
+                </Card>
+            );
+        }
+    }
+
     renderItems = () => {
         if (!this.props.contract) {
             return;
@@ -218,29 +267,7 @@ class StoreDetails extends Component {
             return (
                 <Card.Group> 
                     {this.state.items.map((item) => (
-                            <Card className='ui raised card' key={item.id}>
-                                <Image className="image" src={`https://ipfs.io/ipfs/${item.image}`} wrapped ui={false} />
-                                <Card.Content className='content'>
-                                    <Card.Header>{`Product: ${item.name}`}</Card.Header>
-                                    <Card.Meta>{item.sku > 0 ? "Available Item" : "Unavailable Item"}</Card.Meta>
-                                    <Card.Description>
-                                        {`SKU: ${item.sku}`}
-                                    </Card.Description>
-                                </Card.Content>
-                                <Card.Content extra>
-                                    <Icon name='dollar sign' />
-                                    {`Price: ${item.price} ETH`}
-                                    <Button className='ui primary button right floated'
-                                            loading={this.state.buying}
-                                            disabled={item.sku == 0}
-                                            onClick={() => this.purchaseItem(item.id, item.price, this.props.storeId)}
-
-                                    >
-                                        <Icon name='shop' />
-                                        Buy Now
-                                    </Button>
-                                </Card.Content>
-                            </Card>
+                            this.renderItem(item)
                         ))
                     }
                 </Card.Group>
@@ -252,49 +279,83 @@ class StoreDetails extends Component {
         if(this.props.accounts !== null){
             if(this.props.accounts[0] === this.state.owner) {
                 return (
-                    <Segment>
-                        <Header as='h2' floated='right'>
-                        New Item
-                        </Header>
-                        <Divider clearing />
-                        <Form>
-                            <Form.Group widths='equal'>
-                                <Form.Input 
-                                    label='Name' 
-                                    placeholder='Please Enter Item Name Here'
-                                    onChange={this.handleNameChange}
-                                    value={this.state.newItem}
-                                />
+                    <Container>
+                        <Segment>
+                            <Header as='h1'>Welcome to the Store Balance</Header>
+                            <Divider clearing />
+                            <Segment>
+                                <Header as='h2' floated='left'>
+                                    Current Balance Available:
+                                </Header>
+                                <Header as='h2' floated='right' color='blue'>
+                                    {this.state.balance} <Icon name='ethereum' />
+                                </Header>
+                                <Divider clearing />
+                                {this.renderWithdraw()}
+                            </Segment>
+                        </Segment>
+                        <Segment>
+                            <Header as='h2' floated='right'>
+                            New Item
+                            </Header>
+                            <Divider clearing />
+                            <Form>
+                                <Form.Group widths='equal'>
+                                    <Form.Input 
+                                        label='Name' 
+                                        placeholder='Please Enter Item Name Here'
+                                        onChange={this.handleNameChange}
+                                        value={this.state.newItem}
+                                    />
+                                    <Form.Input
+                                        label='Price'
+                                        placeholder='Please Enter Item Price Here'
+                                        onChange={this.handlePriceChange}
+                                        value={this.state.newPrice}
+                                    />
+                                    <Form.Input
+                                        label='Sku'
+                                        placeholder='Please Enter Item Sku Here'
+                                        onChange={this.handleSkuChange}
+                                        value={this.state.newSku}
+                                    />
+                                </Form.Group>
                                 <Form.Input
-                                    label='Price'
-                                    placeholder='Please Enter Item Price Here'
-                                    onChange={this.handlePriceChange}
-                                    value={this.state.newPrice}
-                                />
-                                <Form.Input
-                                    label='Sku'
-                                    placeholder='Please Enter Item Sku Here'
-                                    onChange={this.handleSkuChange}
-                                    value={this.state.newSku}
-                                />
-                            </Form.Group>
-                            <Form.Input
-                                    label='Photo'
-                                    type='file'
-                                    placeholder='Please Select A Photo For The New Item Here'
-                                    onChange={this.handleImage}
-                                />
-                            <Button 
-                                onClick={this.handleSubmit}
-                                loading={this.state.load}
-                            >
-                                Create
-                            </Button>
-                        </Form>
-                    </Segment>
+                                        label='Photo'
+                                        type='file'
+                                        placeholder='Please Select A Photo For The New Item Here'
+                                        onChange={this.handleImage}
+                                    />
+                                <Button 
+                                    onClick={this.handleSubmit}
+                                    loading={this.state.load}
+                                >
+                                    Create
+                                </Button>
+                            </Form>
+                        </Segment>
+                    </Container>
                 );
             }
         }
+    }
+
+    renderWithdraw = () => {
+        return (
+            <Segment>
+                <Form>
+                    <Button 
+                        fluid
+                        color='red'
+                        onClick={this.withdrawBalance}
+                        loading={this.state.loading}
+                    >
+                        Withdraw
+                    </Button>
+                </Form>
+            </Segment>
+        );
+        
     }
 
     render() {
