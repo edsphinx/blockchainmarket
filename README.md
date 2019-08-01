@@ -7,7 +7,7 @@
 A decentraliced marketplace where you are able to sell and buy items paying with ETH, A user can create multiples stores and create multiples items on them, also there is a balance for each store that the owner of the Store can Withdraw. The project is using IPFS to upload and display images of the items created for every store, there are 12 tests because was needed in the development process.
 
 ### Live Example 
-It's running at [https://tender-benz-6b658e.netlify.com/](https://tender-benz-6b658e.netlify.com/) 
+It's running at [https://finalprojectconsensys.netlify.com/](https://finalprojectconsensys.netlify.com/) 
 
 The Smart Contract is with the ENS:
 
