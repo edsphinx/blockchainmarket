@@ -4,9 +4,9 @@ import "contracts/StoreFactory.sol";
 
 contract ItemFactory is StoreFactory {
 
-    event NewItem(uint256 itemId, uint256 indexed userId, string _itemName, uint256 price);
+    // event NewItem(uint256 itemId, uint256 indexed userId, string _itemName, uint256 price);
 
-    function newItem(string memory _itemName, uint _itemPrice, uint _itemSKU, uint _storeId, string memory _imageHash) 
+    function newItem(string memory _itemName, uint _itemPrice, uint _itemSKU, uint _storeId, string memory _imageHash)
         public 
         notPaused
         validNameLength(_itemName, 35)
@@ -23,9 +23,9 @@ contract ItemFactory is StoreFactory {
         stores[_storeId].items[total].image = _imageHash;
 
         // increase items total in Stores
-        stores[_storeId].skuTotal = SafeMath.add(total, 1); 
+        stores[_storeId].skuTotal = SafeMath.add(total, 1);
 
-        emit NewItem(_itemSKU, _storeId, _itemName, _itemPrice );
+        // emit NewItem(_itemSKU, _storeId, _itemName, _itemPrice );
 
         return skuTotal;
     }

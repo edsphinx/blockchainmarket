@@ -3073,7 +3073,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-01T04:07:53.286Z",
+  "updatedAt": "2019-08-01T06:09:20.781Z",
   "devdoc": {
     "methods": {
       "checkRole(address,string)": {

@@ -27,14 +27,14 @@
     "absolutePath": "/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol",
     "exportedSymbols": {
       "BlockchainMarketInterface": [
-        857
+        733
       ]
     },
-    "id": 858,
+    "id": 734,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 851,
+        "id": 727,
         "literals": [
           "solidity",
           "^",
@@ -50,9 +50,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 857,
+        "id": 733,
         "linearizedBaseContracts": [
-          857
+          733
         ],
         "name": "BlockchainMarketInterface",
         "nodeType": "ContractDefinition",
@@ -60,28 +60,28 @@
           {
             "body": null,
             "documentation": null,
-            "id": 856,
+            "id": 732,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isBlockchainMarket",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 852,
+              "id": 728,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "95:2:3"
             },
             "returnParameters": {
-              "id": 855,
+              "id": 731,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 854,
+                  "id": 730,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 856,
+                  "scope": 732,
                   "src": "121:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -90,7 +90,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 853,
+                    "id": 729,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "121:4:3",
@@ -105,14 +105,14 @@
               ],
               "src": "120:6:3"
             },
-            "scope": 857,
+            "scope": 733,
             "src": "68:59:3",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 858,
+        "scope": 734,
         "src": "25:104:3"
       }
     ],
@@ -122,14 +122,14 @@
     "absolutePath": "/Users/luminode/Training/blockchainmarket/contracts/BlockchainMarketInterface.sol",
     "exportedSymbols": {
       "BlockchainMarketInterface": [
-        857
+        733
       ]
     },
-    "id": 858,
+    "id": 734,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 851,
+        "id": 727,
         "literals": [
           "solidity",
           "^",
@@ -145,9 +145,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 857,
+        "id": 733,
         "linearizedBaseContracts": [
-          857
+          733
         ],
         "name": "BlockchainMarketInterface",
         "nodeType": "ContractDefinition",
@@ -155,28 +155,28 @@
           {
             "body": null,
             "documentation": null,
-            "id": 856,
+            "id": 732,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isBlockchainMarket",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 852,
+              "id": 728,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "95:2:3"
             },
             "returnParameters": {
-              "id": 855,
+              "id": 731,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 854,
+                  "id": 730,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 856,
+                  "scope": 732,
                   "src": "121:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -185,7 +185,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 853,
+                    "id": 729,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "121:4:3",
@@ -200,14 +200,14 @@
               ],
               "src": "120:6:3"
             },
-            "scope": 857,
+            "scope": 733,
             "src": "68:59:3",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 858,
+        "scope": 734,
         "src": "25:104:3"
       }
     ],
@@ -219,7 +219,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-01T03:33:42.869Z",
+  "updatedAt": "2019-08-01T06:09:20.779Z",
   "devdoc": {
     "methods": {}
   },

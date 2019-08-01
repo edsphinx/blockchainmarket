@@ -6,7 +6,7 @@ contract StoreFactory is BlockchainMarketBase {
 
     event NewStore(string _storeName, address _storeOwner, uint _skuTotal);
     
-    function newStore(string memory _storeName, address payable _storeOwner, uint _storeSkuTotal) 
+    function newStore(string memory _storeName, address payable _storeOwner, uint _storeSkuTotal)
         public
         notPaused
         validNameLength(_storeName, 35)

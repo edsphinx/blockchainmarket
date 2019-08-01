@@ -1,5 +1,6 @@
 const BlockchainMarket = artifacts.require("./BlockchainMarket.sol");
 
+
 contract("BlockchainMarket", async accounts => {
     const testowner = accounts[0];
     const testUser1 = accounts[1];

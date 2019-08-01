@@ -4,17 +4,6 @@ import "contracts/AccessControl.sol";
 
 contract BlockchainMarketBase is AccessControl {
 
-    event GetOrder(uint _storeId, uint _sku, uint _quantity, uint _price);
-    event GetItem(uint _storeId, uint _sku, string _name, uint _price, string _image);
-    event GetStoreTotalItem(uint _storeId, uint _total);
-    event GetStoreTotal(uint _total);
-    event PurchaseItem(uint _storeId, uint _sku, uint _quantity);
-    event DeleteItem(uint _storeId, uint _sku);
-    event GetStore(uint _storeId, string _name, address _owner, uint _skuTotal);
-    event GetBalance(uint _storeId, uint _balance);
-    event WithdrawBalance(uint _storeId, uint _total);
-    event WithdrawAll(address _owner, uint _balance);
-
     uint skuTotal = 0;
 
     uint storeTotal = 0;

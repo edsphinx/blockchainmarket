@@ -1,5 +1,5 @@
 let BlockchainMarket = artifacts.require("./BlockchainMarket.sol");
-let Store = artifacts.require("./Store.sol");
+// let Store = artifacts.require("./Store.sol");
 
 module.exports = function (deployer) {
     deployer.then( 

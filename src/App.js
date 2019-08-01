@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Header, Dropdown, Menu, Icon } from 'semantic-ui-react';
+import { Header, Menu, Icon } from 'semantic-ui-react';
 import BlockchainMarketContract from "./contracts/BlockchainMarket.json";
-import BlockchainMarketContractDeployed from "./contracts/BlockchainMarket_Ropsten_Deployed.json"
 import web3Provider from "./web3";
 import Home from './components/Home';
 import StoreDetails from './components/StoreDetails';
-import ENS from 'ethereum-ens';
+// import ENS from 'ethereum-ens';
 
 class App extends Component {
 
@@ -21,24 +20,14 @@ class App extends Component {
 
     connectETH = async () => {
         const web3 = await web3Provider();
+        let accounts = await web3.eth.getAccounts();
         const networkId = await web3.eth.net.getId();
-        const networkDeployed = BlockchainMarketContractDeployed.networks[networkId];
         const network = BlockchainMarketContract.networks[networkId];
 
-        //ENS Implementation
-        const ens = new ENS(web3);
-        const ensAddress = 'finalproject.eth';
-        //const contractAddress = ens.resolver(ensAddress).addr()
-        //This to Deploy Ropsten Version And Comment Deploy Local Development Bellow
-        //0x3620ac3b36a73d3af16886c12d561132ced1f3eb
-        const contractAddress = "0x3620aC3b36A73D3AF16886C12D561132CED1F3Eb";
-        const contract = new web3.eth.Contract(BlockchainMarketContractDeployed.abi, contractAddress);
+        const addressContract = "0x3620ac3b36a73d3af16886c12d561132ced1f3eb";
+        const contract = new web3.eth.Contract(BlockchainMarketContract.abi, addressContract);
+        // const contract = new web3.eth.Contract(BlockchainMarketContract.abi, network && network.address);
 
-        //This to Deploy Local Development and Comment Deploy Ropsten Version 
-        //const contract = new web3.eth.Contract(BlockchainMarketContract.abi, network && network.address);
-
-
-        let accounts = await web3.eth.getAccounts();
         web3.currentProvider.publicConfigStore.on('update', async () => {
             accounts = await web3.eth.getAccounts();
             this.setState({ accounts });
