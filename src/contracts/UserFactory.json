@@ -335,14 +335,14 @@
     "absolutePath": "/Users/luminode/Training/blockchainmarket/contracts/UserFactory.sol",
     "exportedSymbols": {
       "UserFactory": [
-        1282
+        1141
       ]
     },
-    "id": 1283,
+    "id": 1142,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1275,
+        "id": 1134,
         "literals": [
           "solidity",
           "^",
@@ -355,10 +355,10 @@
       {
         "absolutePath": "contracts/BlockchainMarketBase.sol",
         "file": "contracts/BlockchainMarketBase.sol",
-        "id": 1276,
+        "id": 1135,
         "nodeType": "ImportDirective",
-        "scope": 1283,
-        "sourceUnit": 1895,
+        "scope": 1142,
+        "sourceUnit": 1754,
         "src": "25:44:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -366,10 +366,10 @@
       {
         "absolutePath": "contracts/BlockchainMarketInterface.sol",
         "file": "contracts/BlockchainMarketInterface.sol",
-        "id": 1277,
+        "id": 1136,
         "nodeType": "ImportDirective",
-        "scope": 1283,
-        "sourceUnit": 1903,
+        "scope": 1142,
+        "sourceUnit": 1762,
         "src": "70:49:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -380,61 +380,61 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1278,
+              "id": 1137,
               "name": "BlockchainMarketBase",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1894,
+              "referencedDeclaration": 1753,
               "src": "145:20:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BlockchainMarketBase_$1894",
+                "typeIdentifier": "t_contract$_BlockchainMarketBase_$1753",
                 "typeString": "contract BlockchainMarketBase"
               }
             },
-            "id": 1279,
+            "id": 1138,
             "nodeType": "InheritanceSpecifier",
             "src": "145:20:9"
           }
         ],
         "contractDependencies": [
-          1790,
-          1894,
-          2205
+          1649,
+          1753,
+          2047
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1282,
+        "id": 1141,
         "linearizedBaseContracts": [
-          1282,
-          1894,
-          1790,
-          2205
+          1141,
+          1753,
+          1649,
+          2047
         ],
         "name": "UserFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1281,
+            "id": 1140,
             "name": "blockchainMarket",
             "nodeType": "VariableDeclaration",
-            "scope": 1282,
+            "scope": 1141,
             "src": "173:51:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1902",
+              "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1761",
               "typeString": "contract BlockchainMarketInterface"
             },
             "typeName": {
               "contractScope": null,
-              "id": 1280,
+              "id": 1139,
               "name": "BlockchainMarketInterface",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1902,
+              "referencedDeclaration": 1761,
               "src": "173:25:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1902",
+                "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1761",
                 "typeString": "contract BlockchainMarketInterface"
               }
             },
@@ -442,7 +442,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1283,
+        "scope": 1142,
         "src": "121:735:9"
       }
     ],
@@ -452,14 +452,14 @@
     "absolutePath": "/Users/luminode/Training/blockchainmarket/contracts/UserFactory.sol",
     "exportedSymbols": {
       "UserFactory": [
-        1282
+        1141
       ]
     },
-    "id": 1283,
+    "id": 1142,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1275,
+        "id": 1134,
         "literals": [
           "solidity",
           "^",
@@ -472,10 +472,10 @@
       {
         "absolutePath": "contracts/BlockchainMarketBase.sol",
         "file": "contracts/BlockchainMarketBase.sol",
-        "id": 1276,
+        "id": 1135,
         "nodeType": "ImportDirective",
-        "scope": 1283,
-        "sourceUnit": 1895,
+        "scope": 1142,
+        "sourceUnit": 1754,
         "src": "25:44:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -483,10 +483,10 @@
       {
         "absolutePath": "contracts/BlockchainMarketInterface.sol",
         "file": "contracts/BlockchainMarketInterface.sol",
-        "id": 1277,
+        "id": 1136,
         "nodeType": "ImportDirective",
-        "scope": 1283,
-        "sourceUnit": 1903,
+        "scope": 1142,
+        "sourceUnit": 1762,
         "src": "70:49:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -497,61 +497,61 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1278,
+              "id": 1137,
               "name": "BlockchainMarketBase",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1894,
+              "referencedDeclaration": 1753,
               "src": "145:20:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BlockchainMarketBase_$1894",
+                "typeIdentifier": "t_contract$_BlockchainMarketBase_$1753",
                 "typeString": "contract BlockchainMarketBase"
               }
             },
-            "id": 1279,
+            "id": 1138,
             "nodeType": "InheritanceSpecifier",
             "src": "145:20:9"
           }
         ],
         "contractDependencies": [
-          1790,
-          1894,
-          2205
+          1649,
+          1753,
+          2047
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1282,
+        "id": 1141,
         "linearizedBaseContracts": [
-          1282,
-          1894,
-          1790,
-          2205
+          1141,
+          1753,
+          1649,
+          2047
         ],
         "name": "UserFactory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1281,
+            "id": 1140,
             "name": "blockchainMarket",
             "nodeType": "VariableDeclaration",
-            "scope": 1282,
+            "scope": 1141,
             "src": "173:51:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1902",
+              "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1761",
               "typeString": "contract BlockchainMarketInterface"
             },
             "typeName": {
               "contractScope": null,
-              "id": 1280,
+              "id": 1139,
               "name": "BlockchainMarketInterface",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1902,
+              "referencedDeclaration": 1761,
               "src": "173:25:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1902",
+                "typeIdentifier": "t_contract$_BlockchainMarketInterface_$1761",
                 "typeString": "contract BlockchainMarketInterface"
               }
             },
@@ -559,7 +559,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1283,
+        "scope": 1142,
         "src": "121:735:9"
       }
     ],
@@ -571,7 +571,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-01T03:33:42.879Z",
+  "updatedAt": "2019-08-09T19:14:15.861Z",
   "devdoc": {
     "methods": {
       "checkRole(address,string)": {

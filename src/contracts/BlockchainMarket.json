@@ -10737,9 +10737,188 @@
     "name": "solc",
     "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0x828305b35529016f2d7d263097c9b527adc80d7ddbd32a26f13c3640c8e225b1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_storeId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_sku",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_quantity",
+              "type": "uint256"
+            }
+          ],
+          "name": "PurchaseItem",
+          "type": "event",
+          "signature": "0x828305b35529016f2d7d263097c9b527adc80d7ddbd32a26f13c3640c8e225b1"
+        },
+        "0x3d242c715a56345b1e4b590207ac651f026176b694ab2931736145c37a719e91": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_storeId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_sku",
+              "type": "uint256"
+            }
+          ],
+          "name": "DeleteItem",
+          "type": "event",
+          "signature": "0x3d242c715a56345b1e4b590207ac651f026176b694ab2931736145c37a719e91"
+        },
+        "0xd7a4aa9f3dca5f6606ac15d7e1850920201bbb02c38cd986793779f58ae0dfd3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_balance",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawAll",
+          "type": "event",
+          "signature": "0xd7a4aa9f3dca5f6606ac15d7e1850920201bbb02c38cd986793779f58ae0dfd3"
+        },
+        "0x14a5199f2fb2f8440ae41be41d4a191e067087a0db7aabe07cfd851bda440917": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_storeName",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "_storeOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_skuTotal",
+              "type": "uint256"
+            }
+          ],
+          "name": "NewStore",
+          "type": "event",
+          "signature": "0x14a5199f2fb2f8440ae41be41d4a191e067087a0db7aabe07cfd851bda440917"
+        },
+        "0x450db8da6efbe9c22f2347f7c2021231df1fc58d3ae9a2fa75d39fa446199305": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newContract",
+              "type": "address"
+            }
+          ],
+          "name": "ContractUpgrade",
+          "type": "event",
+          "signature": "0x450db8da6efbe9c22f2347f7c2021231df1fc58d3ae9a2fa75d39fa446199305"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event",
+          "signature": "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_oldAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event",
+          "signature": "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f"
+        },
+        "0xab35696f06e428ebc5ceba8cd17f8fed287baf43440206d1943af1ee53e6d267": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "ContractPaused",
+          "type": "event",
+          "signature": "0xab35696f06e428ebc5ceba8cd17f8fed287baf43440206d1943af1ee53e6d267"
+        },
+        "0x0e5e3b3fb504c22cf5c42fa07d521225937514c654007e1f12646f89768d6f94": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "ContractUnpaused",
+          "type": "event",
+          "signature": "0x0e5e3b3fb504c22cf5c42fa07d521225937514c654007e1f12646f89768d6f94"
+        },
+        "0xbfec83d64eaa953f2708271a023ab9ee82057f8f3578d548c1a4ba0b5b700489": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "role",
+              "type": "string"
+            }
+          ],
+          "name": "RoleAdded",
+          "type": "event",
+          "signature": "0xbfec83d64eaa953f2708271a023ab9ee82057f8f3578d548c1a4ba0b5b700489"
+        },
+        "0xd211483f91fc6eff862467f8de606587a30c8fc9981056f051b897a418df803a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "role",
+              "type": "string"
+            }
+          ],
+          "name": "RoleRemoved",
+          "type": "event",
+          "signature": "0xd211483f91fc6eff862467f8de606587a30c8fc9981056f051b897a418df803a"
+        }
+      },
+      "links": {},
+      "address": "0x2de9E876168185153eae3E25dBd3932C364d7caf",
+      "transactionHash": "0x192c7200ad8d1d3a6567862de547eae31f25d5ace24ad8f1d9e103830c0d95db"
+    }
+  },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-01T04:07:53.278Z",
+  "updatedAt": "2019-08-09T19:14:17.362Z",
   "devdoc": {
     "methods": {
       "checkRole(address,string)": {
