@@ -235,14 +235,15 @@ class StoreDetails extends Component {
                     <Image className="image" src={`https://ipfs.io/ipfs/${item.image}`} wrapped ui={false} />
                     <Card.Content className='content'>
                         <Card.Header>{`Product: ${item.name}`}</Card.Header>
-                        <Card.Meta>{item.sku > 0 ? "Available Item" : "Unavailable Item"}</Card.Meta>
+                        <Card.Meta>
+                            <Icon name='ethereum' />
+                            {`Price: ${item.price} Wei`}
+                        </Card.Meta>
                         <Card.Description>
                             {`SKU: ${item.sku}`}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                        <Icon name='ethereum' />
-                        {`Price: ${item.price} ETH`}
                         <Button className='ui primary button right floated'
                                 loading={this.state.buying}
                                 disabled={item.sku == 0}
@@ -300,35 +301,41 @@ class StoreDetails extends Component {
                             </Header>
                             <Divider clearing />
                             <Form>
-                                <Form.Group widths='equal'>
-                                    <Form.Input 
-                                        label='Name' 
-                                        placeholder='Please Enter Item Name Here'
-                                        onChange={this.handleNameChange}
-                                        value={this.state.newItem}
-                                    />
+                                <Segment>
+                                    <Form.Group widths='equal'>
+                                        <Form.Input
+                                            required
+                                            label='Name' 
+                                            placeholder='Please Enter Item Name Here'
+                                            onChange={this.handleNameChange}
+                                            value={this.state.newItem}
+                                        />
+                                        <Form.Input
+                                            required
+                                            label='Price in Wei'
+                                            placeholder='Please Enter Item Price Here'
+                                            onChange={this.handlePriceChange}
+                                            value={this.state.newPrice}
+                                        />
+                                        <Form.Input
+                                            required
+                                            label='Sku'
+                                            placeholder='Please Enter Item Sku Here'
+                                            onChange={this.handleSkuChange}
+                                            value={this.state.newSku}
+                                        />
+                                    </Form.Group>
                                     <Form.Input
-                                        label='Price'
-                                        placeholder='Please Enter Item Price Here'
-                                        onChange={this.handlePriceChange}
-                                        value={this.state.newPrice}
-                                    />
-                                    <Form.Input
-                                        label='Sku'
-                                        placeholder='Please Enter Item Sku Here'
-                                        onChange={this.handleSkuChange}
-                                        value={this.state.newSku}
-                                    />
-                                </Form.Group>
-                                <Form.Input
-                                        label='Photo'
-                                        type='file'
-                                        placeholder='Please Select A Photo For The New Item Here'
-                                        onChange={this.handleImage}
-                                    />
+                                            required
+                                            label='Photo'
+                                            type='file'
+                                            placeholder='Please Select A Photo For The New Item Here'
+                                            onChange={this.handleImage}
+                                        />
+                                </Segment>
                                 <Button 
-                                    onClick={this.handleSubmit}
-                                    loading={this.state.load}
+                                    onClick={this.handleSubmit} 
+                                    loading={this.state.loading}
                                 >
                                     Create
                                 </Button>
@@ -348,7 +355,6 @@ class StoreDetails extends Component {
                         fluid
                         color='red'
                         onClick={this.withdrawBalance}
-                        loading={this.state.loading}
                     >
                         Withdraw
                     </Button>

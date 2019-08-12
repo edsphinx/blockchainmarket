@@ -1,6 +1,6 @@
 import Web3 from 'web3';
 
-const localDevPort = "7545";
+const localDevPort = "8545";
 const localDevServer = `http://127.0.0.1:${localDevPort}`;
 
 const web3Provider = () => 

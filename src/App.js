@@ -24,6 +24,13 @@ class App extends Component {
         const networkId = await web3.eth.net.getId();
         const network = BlockchainMarketContract.networks[networkId];
 
+        //ENS Implementation
+        //const ens = new ENS(web3);
+        //const ensAddress = 'finalproject.eth';
+        //const contractAddress = ens.resolver(ensAddress).addr()
+        //This to Deploy Ropsten Version And Comment Deploy Local Development Bellow
+       //const contractAddress = "0x3620aC3b36A73D3AF16886C12D561132CED1F3Eb";
+
         // const addressContract = "0x3620ac3b36a73d3af16886c12d561132ced1f3eb";
         // const addressContract = "0x41874D4ae72E1Fc0F49F0401A5B04a1F3e26eb83";
         // const contract = new web3.eth.Contract(BlockchainMarketContract.abi, addressContract);

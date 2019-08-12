@@ -2,10 +2,23 @@ pragma solidity ^0.5.0;
 
 import "contracts/StoreFactory.sol";
 
+/// @title ItemFactory is the Contract to handle new items
+/// @author Oscar Eduardo Fonseca Gomez
+/// @notice This is a core contract for the logic of the new items
+/// @dev The contract should be included in BlockchainMarket Contract
 contract ItemFactory is StoreFactory {
 
     // event NewItem(uint256 itemId, uint256 indexed userId, string _itemName, uint256 price);
 
+    /// @author Oscar E. Fonseca
+    /// @notice Create a new item in the Store
+    /// @dev only available when contract is not paused and is called by the store owner
+    /// @param _itemName The name of the item
+    /// @param _itemPrice The price of the item
+    /// @param _itemSKU The sku of the item
+    /// @param _storeId The Id of the store
+    /// @param _imageHash The string hash of the phot of the item
+    /// @return the total of items in the store
     function newItem(string memory _itemName, uint _itemPrice, uint _itemSKU, uint _storeId, string memory _imageHash)
         public 
         notPaused

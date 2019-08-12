@@ -2,6 +2,10 @@ pragma solidity ^0.5.0;
 
 import "contracts/AccessControl.sol";
 
+/// @title BlockchainMarketBase is the Base Contract to define structs, mappings and users access
+/// @author Oscar Eduardo Fonseca Gomez
+/// @notice This is a base contract for the global declarations
+/// @dev The contract should be included in StoreFactory Contract
 contract BlockchainMarketBase is AccessControl {
 
     uint skuTotal = 0;

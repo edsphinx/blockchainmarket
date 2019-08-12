@@ -14,6 +14,11 @@ The Smart Contract is with the ENS:
 You can reach the smart contract of this project on Ropsten Network at [finalproject.eth](finalproject.eth) the address is 
 0x3620aC3b36A73D3AF16886C12D561132CED1F3Eb
 
+### The ENS implementation
+
+Was removed due to some problems the implementation is in the history:
+https://github.com/edsphinx/blockchainmarket/commit/3422ee404f82f657a4e430ee2f7c3cdca8e43631#diff-14b1e33d5bf5649597cdc0e4f684dadd
+
 #  Developer Setup
 ### Build / Run / Deploy Prerequisites
 * Node 8.16 or above (also install npm)
@@ -32,7 +37,7 @@ You can reach the smart contract of this project on Ropsten Network at [finalpro
 # Development Tasks
 ## Blockchain
 ### Start Ganache CLI
-An Ethereum client on 127.0.0.1:7545, will start up a local blockchain for testing.
+An Ethereum client on 127.0.0.1:8545, will start up a local blockchain for testing.
 
 ```npm run ganache:start```
 
@@ -49,9 +54,6 @@ Communicates with the Ethereum client, allows compiling, migrating, debugging, e
 
 #### Run contract tests
 *truffle(development)>* ```test```
-
-#### Execute mock data scripts
-*truffle(development)>* ```exec mock/<script-name>.js```
 
 ## React App
 ### Launch application
