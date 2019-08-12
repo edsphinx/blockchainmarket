@@ -52,7 +52,7 @@ https://github.com/edsphinx/blockchainmarket/tree/dev
 # Development Tasks
 ## Blockchain
 ### Start Ganache CLI
-An Ethereum client on 127.0.0.1:7545, will start up a local blockchain for testing.
+An Ethereum client on 127.0.0.1:8545, will start up a local blockchain for testing.
 
 ```npm run ganache:start```
 
