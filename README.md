@@ -7,6 +7,11 @@
 #  Blockchain Market DAPP
 A decentraliced marketplace where you are able to sell and buy items paying with ETH, A user can create multiples stores and create multiples items on them, also there is a balance for each store that the owner of the Store can Withdraw. The project is using IPFS to upload and display images of the items created for every store, there are 12 tests because was needed in the development process.
 
+### Imporant Local environment Details
+
+The address of the contract is hardcoded in the line 27 of App.js and you should update it with yours after migration, this change was made to deploy to Ropsten Network.
+The truffle-config has the network name 'develop' and it should be 'development' to successfully migrate to the ganache network 
+
 ### Live Example 
 It's running at [https://finalprojectconsensys.netlify.com/](https://finalprojectconsensys.netlify.com/) 
 
@@ -19,6 +24,16 @@ You can reach the smart contract of this project on Ropsten Network at [finalpro
 
 Was removed due to some problems the implementation is in the history:
 https://github.com/edsphinx/blockchainmarket/commit/3422ee404f82f657a4e430ee2f7c3cdca8e43631#diff-14b1e33d5bf5649597cdc0e4f684dadd
+
+### IMPORTANT DETAILS ABOUT INTERFACE
+
+* The Price of the items/products is in Wei, I misplaced ETH as label but it should be Wei, only integers.
+* All field are mandatory and the photo is upload to IPFS and will take some time to respond, please bear with me the waiting.
+
+# NATSPEC for Contracts
+
+The contracts with Natspec are in the dev branch:
+https://github.com/edsphinx/blockchainmarket/tree/dev
 
 #  Developer Setup
 ### Build / Run / Deploy Prerequisites
