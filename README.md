@@ -2,6 +2,7 @@
 [![LICENCE](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/edsphinx/streamapp/blob/master/LICENSE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cb7983f0cd2f43af8fb8c80ae3e4575c)](https://www.codacy.com/app/naticode/blockchainmarket?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=edsphinx/blockchainmarket&amp;utm_campaign=Badge_Grade)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Build Status](https://travis-ci.org/edsphinx/blockchainmarket.svg?branch=master)](https://travis-ci.org/edsphinx/blockchainmarket)
 
 #  Blockchain Market DAPP
 A decentraliced marketplace where you are able to sell and buy items paying with ETH, A user can create multiples stores and create multiples items on them, also there is a balance for each store that the owner of the Store can Withdraw. The project is using IPFS to upload and display images of the items created for every store, there are 12 tests because was needed in the development process.
